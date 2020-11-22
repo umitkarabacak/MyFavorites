@@ -21,6 +21,10 @@ namespace MyFavorites.Extension
         public static bool IsValidMailAddress(this string text)
             => Regex.IsMatch(text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
                     RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+        
+        public static bool IsValidUsername(this string text)
+            => Regex.IsMatch(text, "^[a-zA-Z0-9]*$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
 
         public static string CustomFormat(this string text, params object[] args)
         {
